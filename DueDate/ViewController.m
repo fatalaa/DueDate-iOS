@@ -7,6 +7,8 @@
 //
 
 #import "DateHelper.h"
+#import "Presenter.h"
+#import "UIAlertController+Extensions.h"
 #import "ViewController.h"
 
 @interface ViewController ()
@@ -18,31 +20,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showAddPopup)];
-    // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)showErrorMessage:(NSString *)message {
+    UIAlertController *alert = [UIAlertController errorPopupWithMessage:message];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)showResult:(NSString *)message {
+    UIAlertController *alert = [UIAlertController successPopupWithMessage:message title:@"Result"];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)showAddPopup {
-    
+    [self.presenter addDueDateButtonTapped];
+}
+
+- (void)showInputField {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Estimate please" message:@"Please specify an estimation(a number)" preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addTextFieldWithConfigurationHandler:nil];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.keyboardType = UIKeyboardTypeNumberPad;
+    }];
     __weak typeof(self) weakSelf = self;
     [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf convertWithText: alertController.textFields[0].text];
+        [strongSelf.presenter calculationInputReceivedWithRawInput:alertController.textFields[0].text];
         
     }]];
     [self presentViewController:alertController animated:YES completion:nil];
 }
-
-- (NSDate *)convertWithText:(NSString *)text {
-    DateHelper *helper = [DateHelper new];
-    return [helper calculateDueDateWithSubmitTime:[NSDate date] turnaroundTimeInHours:text.integerValue];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 @end

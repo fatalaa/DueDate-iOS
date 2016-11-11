@@ -10,6 +10,8 @@
 
 @interface NSDate (Extensions)
 
+- (BOOL)isBusinessDay;
+- (BOOL)isBusinessTime;
 - (NSDate *)addBusinessHours:(NSUInteger)hoursToAdd;
 
 @end

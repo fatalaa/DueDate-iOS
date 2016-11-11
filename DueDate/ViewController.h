@@ -8,8 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@protocol View <NSObject>
 
+- (void)showErrorMessage:(NSString *)message;
+- (void)showResult:(NSString *)message;
+- (void)showInputField;
+
+@end
+
+@protocol PresenterInterface;
+
+@interface ViewController : UIViewController <View>
+
+@property (nonatomic, strong) id<PresenterInterface> presenter;
 
 @end
 

@@ -16,6 +16,8 @@
 		BB61B5451DD3B586007322A0 /* DueDateUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB61B5441DD3B586007322A0 /* DueDateUITests.m */; };
 		BB61B5541DD4C18B007322A0 /* DateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BB61B5531DD4C18B007322A0 /* DateHelper.m */; };
 		BB61B5571DD4D5AD007322A0 /* NSDate+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = BB61B5561DD4D5AD007322A0 /* NSDate+Extensions.m */; };
+		BB61B55A1DD55227007322A0 /* Presenter.m in Sources */ = {isa = PBXBuildFile; fileRef = BB61B5591DD55226007322A0 /* Presenter.m */; };
+		BB61B5601DD55C8F007322A0 /* UIAlertController+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = BB61B55F1DD55C8F007322A0 /* UIAlertController+Extensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,10 @@
 		BB61B5531DD4C18B007322A0 /* DateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateHelper.m; sourceTree = "<group>"; };
 		BB61B5551DD4D5AD007322A0 /* NSDate+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extensions.h"; sourceTree = "<group>"; };
 		BB61B5561DD4D5AD007322A0 /* NSDate+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extensions.m"; sourceTree = "<group>"; };
+		BB61B5581DD55226007322A0 /* Presenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Presenter.h; sourceTree = "<group>"; };
+		BB61B5591DD55226007322A0 /* Presenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Presenter.m; sourceTree = "<group>"; };
+		BB61B55E1DD55C8F007322A0 /* UIAlertController+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Extensions.h"; sourceTree = "<group>"; };
+		BB61B55F1DD55C8F007322A0 /* UIAlertController+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Extensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,10 @@
 				BB61B5531DD4C18B007322A0 /* DateHelper.m */,
 				BB61B5551DD4D5AD007322A0 /* NSDate+Extensions.h */,
 				BB61B5561DD4D5AD007322A0 /* NSDate+Extensions.m */,
+				BB61B5581DD55226007322A0 /* Presenter.h */,
+				BB61B5591DD55226007322A0 /* Presenter.m */,
+				BB61B55E1DD55C8F007322A0 /* UIAlertController+Extensions.h */,
+				BB61B55F1DD55C8F007322A0 /* UIAlertController+Extensions.m */,
 			);
 			path = DueDate;
 			sourceTree = "<group>";
@@ -284,8 +294,10 @@
 			files = (
 				BB61B5271DD3B586007322A0 /* ViewController.m in Sources */,
 				BB61B5541DD4C18B007322A0 /* DateHelper.m in Sources */,
+				BB61B55A1DD55227007322A0 /* Presenter.m in Sources */,
 				BB61B5241DD3B586007322A0 /* AppDelegate.m in Sources */,
 				BB61B5211DD3B586007322A0 /* main.m in Sources */,
+				BB61B5601DD55C8F007322A0 /* UIAlertController+Extensions.m in Sources */,
 				BB61B5571DD4D5AD007322A0 /* NSDate+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
